@@ -1,8 +1,8 @@
-#pragma once
+
 #include <stdio.h>
 #include <iostream>
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_image.h>
+#include "allegro5/allegro.h"
+#include "allegro5/allegro_image.h"
 #include "map.h"
 #include "tinyxml/tinyxml.h"
 int main(int argc, char **argv) {
@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
 		return 0;
 	}
 
-	map m = map("tileset/example.tmx");
+	map m = map((char *)"tileset/example.tmx");
 
 	
 	al_clear_to_color(al_map_rgb(0, 0, 0));
