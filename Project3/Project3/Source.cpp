@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
 		return -1;
 	}
 
-	display = al_create_display(640, 480);
+	display = al_create_display(800, 800);
 	if (!display) {
 		fprintf(stderr, "failed to create display!\n");
 		return -1;
@@ -30,6 +30,10 @@ int main(int argc, char **argv) {
 	
 	al_clear_to_color(al_map_rgb(0, 0, 0));
 
+    ALLEGRO_BITMAP *bmp = al_load_bitmap("tileset/tree2-final.png");
+    //al_draw_bitmap(bmp, 0, 0, 0);
+    m.draw();
+    
 	al_flip_display();
 
 	al_rest(100.0);
