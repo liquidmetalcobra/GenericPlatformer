@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
 	map m = map((char *)"tileset/example.tmx");
 
 	
-	al_clear_to_color(al_map_rgb(0, 0, 0));
+	al_clear_to_color(al_map_rgb(100, 0, 0));
 
     ALLEGRO_BITMAP *bmp = al_load_bitmap("tileset/tree2-final.png");
     //al_draw_bitmap(bmp, 0, 0, 0);
