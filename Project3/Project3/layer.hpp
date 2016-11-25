@@ -19,7 +19,7 @@ public:
     ~layer();
     
     
-    void draw(std::vector<tileset> ts);
+    void draw(std::vector<tileset> ts,int x, int y);
     
 private:
     

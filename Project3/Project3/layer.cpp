@@ -21,7 +21,7 @@ layer::~layer()
 {
     
 }
-void layer::draw(std::vector<tileset> ts)
+void layer::draw(std::vector<tileset> ts,int x, int y)
 {
     
     for (int i = 0; i < width; i++)
@@ -29,6 +29,8 @@ void layer::draw(std::vector<tileset> ts)
         {
      
             int g = gids->at(i).at(j);
+            //g = 1;
+            
             if (g == 0)
                 continue;
             std::vector<tileset>::iterator it;
@@ -37,7 +39,8 @@ void layer::draw(std::vector<tileset> ts)
                 if (g < it->firstgid + it->tilecount)
                     break;
             int gidCount = g-it->firstgid;
-     
-            al_draw_bitmap_region(it->image, gidCount%it->columns * it->tilewidth, (gidCount/it->columns)*it->tileheight, it->tilewidth, it->tileheight, it->tilewidth*j, it->tileheight*i, 0);
+            
+            al_draw_scaled_bitmap(it->image, gidCount%it->columns * it->tilewidth, (gidCount/it->columns)*it->tileheight+1, it->tilewidth, it->tileheight,it->tilewidth*2*(j-x), it->tileheight*2*(i-y) , it->tilewidth*2, it->tileheight*2, 0);
+            //al_draw_bitmap_region(it->image, , , 0);
         }
 }

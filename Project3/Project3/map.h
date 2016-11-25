@@ -13,18 +13,18 @@ public:
 	map(char * mapName);
 	~map();
 
-    void draw();
+    void draw(int x, int y);
 
-
+    int width;
+    int height;
+    int tileWidth;
+    int tileHeight;
 private:
 	void parseMap(char * mapName);
     
 	char * orientation;
 	char * renderorder;
-	int width;
-	int height;
-	int tileWidth;
-	int tileHeight;
+	
 	int nextObjectID;
     std::vector<tileset> tilesets;
     std::vector<layer> layers;

@@ -105,10 +105,10 @@ void map::parseMap(char * mapName)
 }
 
 
-void map::draw()
+void map::draw(int x, int y)
 {
     std::cout << "HIHIHI\n";
-    //for (int i = 0; i < 3; i++)
-        layers.at(0).draw(tilesets);
+   for (int i = 0; i < 3; i++)
+        layers.at(i).draw(tilesets,x,y);
     
 }
